@@ -1,0 +1,26 @@
+{
+    "recommendations": [
+      "formulahendry.auto-close-tag", // Auto Close Tag
+      "formulahendry.auto-rename-tag", // Auto Rename Tag
+      "formulahendry.code-runner", // Code Runner
+      "streetsidesoftware.code-spell-checker", // Code Spell Checker
+      "msjsdiag.debugger-for-chrome", // Debugger for Chrome
+      "editorconfig.editorconfig", // EditorConfig for VS Code
+      "dbaeumer.vscode-eslint", // ESLint
+      "donjayamanne.githistory", // Git History
+      "eamodio.gitlens", // GitLens — Git supercharged
+      "abusaidm.html-snippets", // HTML Snippets
+      "orta.vscode-jest", // Jest
+      "shd101wyy.markdown-preview-enhanced", // Markdown Preview Enhanced
+      "eg2.vscode-npm-script", // npm
+      "christian-kohler.npm-intellisense", // christian-kohler.npm-intellisense
+      "christian-kohler.path-intellisense", // Path Intellisense
+      "esbenp.prettier-vscode", // Prettier - Code formatter
+      "jasonnutter.search-node-modules", // Search node_modules
+      "gruntfuggly.todo-tree", // Todo Tree
+      "qinjia.view-in-browser", // View In Browser
+      "mikey.vscode-fileheader", // vscode-fileheader
+      "jpoissonnier.vscode-styled-components" // vscode-styled-components
+    ]
+  }
+  

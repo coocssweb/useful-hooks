@@ -1,0 +1,24 @@
+{
+  "fileheader.tpl": "/*\r\n * @Author: wangjiaxin\r\n * @Date: {createTime}\r\n * @Description: xxxxxxxxxxxxxxxx\r\n * \r\n */\r\n",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
+}

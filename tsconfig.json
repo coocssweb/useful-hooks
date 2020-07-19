@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "jsx": "react",
+    "lib": ["dom", "es6", "es2015.promise"],
+    "strictNullChecks": false,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@scss/*": ["assets/scss/*"],
+      "@api/*": ["api/*"],
+      "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"]
+    }
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "babelOptions": {
+      "babelrc": true
+    },
+    "babelCore": "@babel/core"
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules", "build", "config"],
+  "include": ["src"]
+}
