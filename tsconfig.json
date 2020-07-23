@@ -25,7 +25,11 @@
     "babelOptions": {
       "babelrc": true
     },
-    "babelCore": "@babel/core"
+    "babelCore": "@babel/core",
+    "useWebpackText": true,
+    "useTranspileModule": true,
+    "doTypeCheck": true,
+    "forkChecker": true
   },
   "compileOnSave": true,
   "exclude": ["node_modules", "build", "config"],

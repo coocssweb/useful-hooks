@@ -6,6 +6,7 @@ const { useState, useCallback } = React;
 const Previous = () => {
   const [value, setValue] = useState(0);
   const previousValue = usePrevious(value);
+
   const handleClick = useCallback(() => {
     setValue((c) => c + 1);
   }, []);
