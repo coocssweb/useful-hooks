@@ -35,6 +35,7 @@ module.exports = {
     'import/namespace': 2,
     'import/default': 2,
     'import/export': 2,
+    'jsx-a11y/click-events-have-key-events': 0,
     'import/extensions': [
       'error',
       'ignorePackages',

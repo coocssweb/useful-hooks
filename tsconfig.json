@@ -17,21 +17,12 @@
       "@scss/*": ["assets/scss/*"],
       "@api/*": ["api/*"],
       "@utils/*": ["utils/*"],
-      "@constants/*": ["constants/*"]
+      "@constants/*": ["constants/*"],
+      "@actions/*": ["redux/actions/*"],
+      "@reducers/*": ["redux/reducers/*"]
     }
   },
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true,
-    "babelOptions": {
-      "babelrc": true
-    },
-    "babelCore": "@babel/core",
-    "useWebpackText": true,
-    "useTranspileModule": true,
-    "doTypeCheck": true,
-    "forkChecker": true
-  },
-  "compileOnSave": true,
+  "compileOnSave": false,
   "exclude": ["node_modules", "build", "config"],
   "include": ["src"]
 }

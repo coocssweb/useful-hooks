@@ -16,7 +16,9 @@ const Login = () => {
 
   return (
     <div>
-      <button onClick={handleSignIn}>Sign In</button>
+      <div role="button" onClick={handleSignIn} tabIndex={0}>
+        Sign In
+      </div>
     </div>
   );
 };

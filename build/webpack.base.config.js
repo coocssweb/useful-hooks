@@ -24,19 +24,12 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
             rules: [
                 {
                     test: /\.(ts|tsx)$/,
-                    use: [{
-                        loader: 'babel-loader',
-                        options: IS_DEVELOPMENT ? {
-                            cacheDirectory: true,
-                            plugins: ['react-hot-loader/babel'],
-                        } : {}
-                    },{
-                        loader: 'ts-loader',
-                        options: {
-                            transpileOnly: true
-                          }
-                    }],
+                    loader: 'awesome-typescript-loader',
                     exclude: /(node_modules)/,
+                    options: IS_DEVELOPMENT ? {
+                        cacheDirectory: true,
+                        plugins: ['react-hot-loader/babel'],
+                    } : {}
                 },
                 {
                     test: /\.(js|ts|tsx)$/,
