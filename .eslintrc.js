@@ -21,7 +21,7 @@ module.exports = {
       'import/extensions': ['.ts', '.tsx'],
     },
   },
-  plugins: ['prettier', 'import', 'jsx-a11y', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'prettier', 'import', 'jsx-a11y', 'react', 'react-hooks'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
@@ -35,6 +35,8 @@ module.exports = {
     'import/namespace': 2,
     'import/default': 2,
     'import/export': 2,
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
     'jsx-a11y/click-events-have-key-events': 0,
     'import/extensions': [
       'error',
