@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useDispatch } from 'redux-react-hook';
 import { userApi } from '@api/index';
-import { SIGN_IN_SUCCESS } from '../actionTypes';
+import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE } from '../actionTypes';
 
 const { useCallback, useMemo } = React;
 
@@ -22,7 +22,7 @@ const useUserAction = () => {
         password,
       });
       dispatch({
-        type: SIGN_IN_SUCCESS,
+        types: [SIGN_IN_SUCCESS, SIGN_IN_FAILURE],
         payload: response,
       });
     },
