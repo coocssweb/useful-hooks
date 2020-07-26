@@ -21,7 +21,7 @@ const Async = () => {
       {value && <div>{value}</div>}
       {error && <div>{error}</div>}
       <button type="button" onClick={execute} disabled={pending}>
-        {!pending ? 'Click ONmd  me' : 'Loading...'}
+        {!pending ? 'Click me' : 'Loading...'}
       </button>
     </div>
   );

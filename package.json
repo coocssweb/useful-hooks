@@ -30,7 +30,6 @@
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "autoprefixer": "^6.4.0",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -64,7 +63,6 @@
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
-    "ts-loader": "^8.0.1",
     "typescript": "^3.4.4",
     "url-loader": "^1.1.2",
     "webpack": "^4.30.0",
@@ -79,9 +77,8 @@
     "npm": ">= 3.0.0"
   },
   "dependencies": {
-    "antd-mobile": "^2.2.14",
     "classnames": "^2.2.6",
-    "immutable": "^4.0.0-rc.12",
+    "core-js": "^3.6.5",
     "mockjs": "^1.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -90,11 +87,9 @@
     "react-router-dom": "^5.0.0",
     "react-router-page-transition": "^3.1.0",
     "react-transition-group": "^4.2.1",
-    "react-use-gesture": "^6.0.14",
     "redux": "^4.0.5",
     "redux-react-hook": "^4.0.1",
     "shallowequal": "^1.1.0",
-    "styled-components": "^4.4.1",
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [

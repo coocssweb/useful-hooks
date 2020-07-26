@@ -3,15 +3,13 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        targets: {
-          node: 'current',
-        },
-        corejs: '3',
         useBuiltIns: 'usage',
+        modules: false,
+        corejs: 3,
       },
     ],
-    '@babel/preset-react',
     '@babel/preset-typescript',
+    '@babel/preset-react',
   ],
   plugins: [['@babel/plugin-proposal-class-properties', { loose: true }]],
 };

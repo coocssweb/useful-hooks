@@ -23,8 +23,8 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
         module: {
             rules: [
                 {
-                    test: /\.(ts|tsx)$/,
-                    loader: 'awesome-typescript-loader',
+                    test: /\.(j|t)sx?$/,
+                    loader: 'babel-loader',
                     exclude: /(node_modules)/,
                     options: IS_DEVELOPMENT ? {
                         cacheDirectory: true,
@@ -108,7 +108,7 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
                 'process.env.STATIC_PATH': JSON.stringify(config.staticPath),
                 'process.env.HOST': JSON.stringify(config.HOST),
                 'process.env.API': JSON.stringify(config.API),
-                'process.env.MOCK': config.mock
+                'process.env.MOCK': config.MOCK
             }),
             new MiniCssExtractPlugin({
                 filename: IS_DEVELOPMENT ? 'style.css' : `${config.filePath}css/[name].[contenthash:8].css`
