@@ -9,7 +9,10 @@ const Login = () => {
   const { signIn } = useUserAction();
 
   const handleSignIn = useCallback(() => {
-    signIn();
+    signIn({
+      username: 'wangjiaxin',
+      password: '1234123',
+    });
   }, [signIn]);
 
   console.log(profile, loading, error);

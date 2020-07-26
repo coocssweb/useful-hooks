@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import '@scss/index.scss';
 import * as ReactDOM from 'react-dom';
 import * as React from 'react';
@@ -6,7 +7,12 @@ import { StoreContext } from 'redux-react-hook';
 import createStore from './store/createStore';
 import Layout from './examples/Layout';
 
-const store = createStore({});
+if (process.env.MOCK) {
+  console.log('===================');
+  require('./api/mocks');
+}
+
+const store = createStore();
 
 ReactDOM.render(
   <StoreContext.Provider value={store}>

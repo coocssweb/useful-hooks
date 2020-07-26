@@ -27,6 +27,7 @@ module.exports = {
     staticPath: './',
     imgPath: '../../',
     filenameHash: true,
+    mock: false,
   },
   test: {
     devtool: false,
@@ -40,6 +41,7 @@ module.exports = {
     staticPath: '',
     imgPath: '../../',
     filenameHash: false,
+    mock: false,
   },
   development: {
     port: 9000,
@@ -54,5 +56,6 @@ module.exports = {
     filePath: '',
     imgPath: '',
     filenameHash: false,
+    mock: true,
   },
 };

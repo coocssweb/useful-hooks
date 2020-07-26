@@ -1,8 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
-import callbackMiddleWare from './middleWares/callbackMiddleware';
 import reducers from './reducers';
 
-export default (data) => {
-  const finalCreateStore = applyMiddleware(callbackMiddleWare)(createStore);
-  return finalCreateStore(reducers, data);
+// 初始数据
+const INITIAL_STATE = {};
+
+export default () => {
+  const finalCreateStore = applyMiddleware()(createStore);
+  return finalCreateStore(reducers, INITIAL_STATE);
 };
