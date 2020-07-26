@@ -9,7 +9,7 @@ class User extends Base {
   login(loginInfo: LoginInfo): Promise<any> {
     const { username, password } = loginInfo;
     return this.request({
-      path: 'login',
+      url: 'login',
       method: 'post',
       data: { username, password },
     });
@@ -17,18 +17,18 @@ class User extends Base {
 
   logout(): Promise<any> {
     return this.request({
-      path: 'logout',
+      url: 'logout',
       method: 'post',
     });
   }
 
   info(): Promise<any> {
-    return this.request({ path: '/info' });
+    return this.request({ url: '/info' });
   }
 
   edit(userInfo: UserInfo): Promise<any> {
     return this.request({
-      path: '',
+      url: '',
       method: 'post',
       data: userInfo,
     });
@@ -36,7 +36,7 @@ class User extends Base {
 
   updatePassword(password: string, checkPassword: string): Promise<any> {
     return this.request({
-      path: '/password',
+      url: '/password',
       method: 'put',
       data: {
         password,

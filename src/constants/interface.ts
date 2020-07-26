@@ -1,13 +1,3 @@
-// 请求信息
-export interface RequestOptions {
-  path: string;
-  data?: object;
-  method?: string;
-  requireLogin?: boolean;
-  needDelay?: boolean;
-  [propName: string]: any;
-}
-
 // redux action接口
 export interface Action {
   type?: string;

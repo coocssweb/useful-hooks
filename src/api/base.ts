@@ -1,45 +1,47 @@
-import { RequestOptions } from '@constants/interface';
-import 'whatwg-fetch';
+import axios, { AxiosRequestConfig, Method } from 'axios';
 
 class Base {
   static readonly defaultOptions = {
     path: '',
     data: {},
-    method: 'GET',
+    method: 'get',
     requireLogin: false,
     needDelay: false,
   };
 
-  private requestUrl: string;
+  private baseURL: string;
 
   constructor(model: string) {
-    this.requestUrl = `${process.env.API}${model}`;
+    this.baseURL = `${process.env.API}${model}`;
   }
 
-  protected request(options: RequestOptions) {
+  protected request(options: AxiosRequestConfig) {
     const finalOptions = { ...Base.defaultOptions, ...options };
+    const requestMethod = finalOptions.method as Method;
+
     const headers = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     };
-    const fetchInit: RequestInit = {
-      method: finalOptions.method,
-      headers,
-      mode: 'cors',
-    };
-    this.requestUrl = `${this.requestUrl}${finalOptions.path}`;
+
+    const { url } = finalOptions;
     const startReqeustTimestamp = Date.now();
 
     return new Promise<{ meta: any; response: any }>((resolve, reject) => {
-      fetch(this.requestUrl, fetchInit)
+      axios(url, {
+        baseURL: this.baseURL,
+        method: requestMethod,
+        headers,
+        responseType: 'json',
+      })
         .then((response) => {
           const timediff = Date.now() - startReqeustTimestamp;
           if (finalOptions.needDelay && timediff < 300) {
             setTimeout(() => {
-              resolve(response.json());
+              resolve(response.data);
             }, 300 - timediff);
           } else {
-            resolve(response.json());
+            resolve(response.data);
           }
         })
         .catch((error) => {

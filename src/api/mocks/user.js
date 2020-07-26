@@ -1,7 +1,7 @@
 const Mock = require('mockjs');
 
 // 用户登录接口
-Mock.mock(`https://www.shuxia123.com/api/user/login`, 'post', {
+Mock.mock(`http://www.shuxia123.com/api/user/login`, 'post', {
   meta: {
     code: 200,
     desc: '',
@@ -20,7 +20,7 @@ Mock.mock('/api/user/profile', 'get', {
   response: {
     id: 'abc123',
     name: '王佳欣',
-    avatar: 'https://www.shuxia123.com/images/personal.jpg',
+    avatar: 'http://www.shuxia123.com/images/personal.jpg',
   },
 });
 
