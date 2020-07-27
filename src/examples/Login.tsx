@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { useUserAction, useUser } from '../store/actions/index';
+import { useAuth, userAuthAction } from '../store/actions/index';
 
 const { useCallback } = React;
 
 const Login = () => {
-  const { profile, loading, error } = useUser();
+  const { fetching, authenticated, error } = useAuth();
 
-  const { signIn } = useUserAction();
+  const { signIn, signOut } = userAuthAction();
 
   const handleSignIn = useCallback(() => {
     signIn({
@@ -15,13 +15,21 @@ const Login = () => {
     });
   }, [signIn]);
 
-  console.log(profile, loading, error);
+  const handleSignOut = useCallback(() => {
+    signOut();
+  }, [signOut]);
+
+  console.log(fetching, authenticated, error);
 
   return (
     <div>
-      <div role="button" onClick={handleSignIn} tabIndex={0}>
+      <button type="button" onClick={handleSignIn}>
         Sign In
-      </div>
+      </button>
+
+      <button type="button" onClick={handleSignOut}>
+        Sign Out
+      </button>
     </div>
   );
 };

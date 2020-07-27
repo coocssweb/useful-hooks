@@ -1,7 +1,12 @@
 // redux action接口
 export interface Action {
   type?: string;
-  payload?: Object;
+  payload?: object;
+}
+
+export interface ActionPromise {
+  types?: Array<String>;
+  promise?: Promise<any>;
 }
 
 // 登录信息

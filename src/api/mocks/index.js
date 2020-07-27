@@ -5,3 +5,4 @@ Mock.setup({
 });
 
 require('./user');
+require('./auth');

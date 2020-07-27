@@ -1,46 +1,49 @@
 import * as React from 'react';
 import { useDispatch } from 'redux-react-hook';
 import { userApi } from '@api/index';
-import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE } from '../actionTypes';
+import {
+  FETCH_PROFILE_REQUEST,
+  FETCH_PROFILE_SUCCESS,
+  FETCH_PROFILE_FAILURE,
+  EDIT_PROFILE_REQUEST,
+  EDIT_PROFILE_SUCCESS,
+  EDIT_PROFILE_FAILURE,
+} from '../actionTypes';
 
 const { useCallback, useMemo } = React;
 
 const useUserAction = () => {
   const dispatch = useDispatch();
-  /**
-   * 方法：用户注册
-   */
-  const signUp = useCallback(() => {}, []);
 
   /**
-   * 方法：用户登录
+   * 获取用户信息
    */
-  const signIn = useCallback(
-    async ({ username, password }) => {
-      const response = await userApi.login({
-        username,
-        password,
-      });
+  const fetchProfile = useCallback(async () => {
+    dispatch({
+      types: [FETCH_PROFILE_REQUEST, FETCH_PROFILE_SUCCESS, FETCH_PROFILE_FAILURE],
+      promise: userApi.findOne(),
+    });
+  }, [dispatch]);
+
+  /**
+   * 修改用户信息
+   */
+  const editPrifle = useCallback(
+    async (profile) => {
       dispatch({
-        types: [SIGN_IN_SUCCESS, SIGN_IN_FAILURE],
-        payload: response,
+        types: [EDIT_PROFILE_REQUEST, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE],
+        promise: userApi.edit(profile),
       });
     },
     [dispatch],
   );
 
-  /**
-   * 方法：用户登出
-   */
-  const signOut = useCallback(() => {}, []);
-
   return useMemo(() => {
     return {
-      signUp,
-      signIn,
-      signOut,
+      fetchProfile,
+      editPrifle,
     };
-  }, [signIn, signOut, signUp]);
+  }, [editPrifle, fetchProfile]);
 };
 
 export default useUserAction;

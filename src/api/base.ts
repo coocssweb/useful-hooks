@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, Method } from 'axios';
+import tokenPersist from '../store/persitst/tokenPersist';
 
 class Base {
   static readonly defaultOptions = {
@@ -11,19 +12,20 @@ class Base {
 
   private baseURL: string;
 
-  constructor(model: string) {
-    this.baseURL = `${process.env.API}${model}`;
+  constructor() {
+    axios.defaults.baseURL = process.env.API;
+    axios.defaults.timeout = 6000;
+    axios.defaults.responseType = 'json';
+    axios.defaults.headers = {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: tokenPersist.get(),
+    };
   }
 
   protected request(options: AxiosRequestConfig) {
     const finalOptions = { ...Base.defaultOptions, ...options };
     const requestMethod = finalOptions.method as Method;
-
-    const headers = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    };
-
     const { url } = finalOptions;
     const startReqeustTimestamp = Date.now();
 
@@ -31,7 +33,6 @@ class Base {
       axios(url, {
         baseURL: this.baseURL,
         method: requestMethod,
-        headers,
         responseType: 'json',
       })
         .then((response) => {
