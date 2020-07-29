@@ -8,7 +8,6 @@ import createStore from './store/createStore';
 import Layout from './examples/Layout';
 
 if (process.env.MOCK) {
-  console.log('===================');
   require('./api/mocks');
 }
 

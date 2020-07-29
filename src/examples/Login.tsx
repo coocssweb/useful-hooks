@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useAuth, userAuthAction } from '../store/actions/index';
+import '../utils/curry';
 
 const { useCallback } = React;
 
