@@ -76,18 +76,48 @@ const quickSort = (unSorted, isAsc = true) => {
   return [...finalLeft, targetValue, ...finalRight];
 };
 
+// 插入排序
+const insertionSort = (unSorted, isAsc = true) => {
+  const result = [...unSorted];
+  const compare = isAsc ? sortAsc : sortDesc;
+  const { length } = result;
+  let preIndex;
+  let current;
+
+  // 3, 5, 9, 4, 1
+  // 3, 5, 9, 4, 1
+  // 3, 5, 9, 4, 1
+  // 3, 4, 5, 9, 1
+  // 1, 3, 4, 5, 9
+  for (let i = 1; i < length; i += 1) {
+    preIndex = i - 1;
+    current = result[i];
+    while (preIndex >= 0 && compare(result[preIndex], current)) {
+      result[preIndex + 1] = result[preIndex];
+      preIndex -= 1;
+    }
+    result[preIndex + 1] = current;
+  }
+  return result;
+};
+
 const numbers = [3, 5, 9, 4, 1];
 // console.log('===============================bubble sort asc');
 // console.log(bubbleSort(numbers));
 // console.log('===============================bubble sort desc');
 // console.log(bubbleSort(numbers, false));
 
-console.log('===============================pick sort asc');
-console.log(pickSort(numbers));
-console.log('===============================pick sort desc');
-console.log(pickSort(numbers, false));
+// console.log('===============================pick sort asc');
+// console.log(pickSort(numbers));
+// console.log('===============================pick sort desc');
+// console.log(pickSort(numbers, false));
 
 // console.log('===============================quick sort asc');
 // console.log(quickSort(numbers));
 // console.log('===============================quick sort desc');
 // console.log(quickSort(numbers, false));
+
+console.log('===============================insertion sort asc');
+console.log(insertionSort(numbers));
+console.log('===============================insertion sort desc');
+console.log(insertionSort(numbers, false));
