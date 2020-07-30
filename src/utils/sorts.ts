@@ -25,32 +25,29 @@ const bubbleSort = (unSorted, isAsc = true) => {
 
 // 选择排序
 const pickSort = (unSorted, isAsc = true) => {
-  const result = [];
   const targetSorted = [...unSorted];
   const compare = isAsc ? sortAsc : sortDesc;
+  const { length } = targetSorted;
+  let minIndex;
+  let temp;
 
-  // [], [3, 5, 9, 4, 1]
-  // [1], [3, 5, 9, 4]
-  // [1, 3], [5, 9, 4]
-  // [1, 3, 4], [5, 9]
-  // [1, 3, 4, 5], [9]
-  // [1, 3, 4, 5, 8], []
-  for (let i = 0; i < targetSorted.length; ) {
-    let a = targetSorted[0];
-    let index = 0;
-    for (let j = 1; j < targetSorted.length; j += 1) {
-      console.log('===================');
-      if (compare(a, targetSorted[j])) {
-        index = j;
-        a = targetSorted[j];
+  // 3, 5, 9, 4, 1
+  // 1, 3, 5, 9, 4
+  // 1, 3, 4, 5, 9
+  for (let i = 0; i < length; i += 1) {
+    minIndex = i;
+    for (let j = i + 1; j < length; j += 1) {
+      if (compare(targetSorted[minIndex], targetSorted[j])) {
+        minIndex = j;
       }
     }
-    targetSorted.splice(index, 1);
-    result.push(a);
-    // console.log(result, targetSorted);
+
+    temp = targetSorted[i];
+    targetSorted[i] = targetSorted[minIndex];
+    targetSorted[minIndex] = temp;
   }
 
-  return result;
+  return targetSorted;
 };
 
 // 快速排序
@@ -85,10 +82,10 @@ const numbers = [3, 5, 9, 4, 1];
 // console.log('===============================bubble sort desc');
 // console.log(bubbleSort(numbers, false));
 
-// console.log('===============================pick sort asc');
-// console.log(pickSort(numbers));
-// console.log('===============================pick sort desc');
-// console.log(pickSort(numbers, false));
+console.log('===============================pick sort asc');
+console.log(pickSort(numbers));
+console.log('===============================pick sort desc');
+console.log(pickSort(numbers, false));
 
 // console.log('===============================quick sort asc');
 // console.log(quickSort(numbers));
