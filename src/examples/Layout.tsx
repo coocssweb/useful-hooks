@@ -6,6 +6,7 @@ import MemoCompare from './MemoCompare';
 import Script from './Script';
 import Previous from './Previous';
 import Login from './Login';
+import Iro from './IroDemo';
 
 const Layout = () => {
   return (
@@ -43,6 +44,11 @@ const Layout = () => {
               Login
             </Link>
           </li>
+          <li className="globalMenus-item">
+            <Link to="/iro" className="globalMenus-link">
+              Iro
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="globalContainer">
@@ -52,6 +58,7 @@ const Layout = () => {
         <Route path="/script" component={Script} exact />
         <Route path="/previous" component={Previous} exact />
         <Route path="/login" component={Login} exact />
+        <Route path="/iro" component={Iro} exact />
       </div>
     </div>
   );

@@ -117,7 +117,7 @@ const numbers = [3, 5, 9, 4, 1];
 // console.log('===============================quick sort desc');
 // console.log(quickSort(numbers, false));
 
-console.log('===============================insertion sort asc');
-console.log(insertionSort(numbers));
-console.log('===============================insertion sort desc');
-console.log(insertionSort(numbers, false));
+// console.log('===============================insertion sort asc');
+// console.log(insertionSort(numbers));
+// console.log('===============================insertion sort desc');
+// console.log(insertionSort(numbers, false));
