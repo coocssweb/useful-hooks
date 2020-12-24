@@ -5,8 +5,9 @@ import WhyDidYouUpdate from './WhyDidYouUpdate';
 import MemoCompare from './MemoCompare';
 import Script from './Script';
 import Previous from './Previous';
+import Latest from './Latest';
 import Login from './Login';
-import Iro from './IroDemo';
+import Zustand from './Zustand/Zustand';
 
 const Layout = () => {
   return (
@@ -33,20 +34,24 @@ const Layout = () => {
               Script
             </Link>
           </li>
-
           <li className="globalMenus-item">
             <Link to="/previous" className="globalMenus-link">
               Previous
             </Link>
           </li>
           <li className="globalMenus-item">
-            <Link to="/login" className="globalMenus-link">
-              Login
+            <Link to="/latest" className="globalMenus-link">
+              Latest
             </Link>
           </li>
           <li className="globalMenus-item">
-            <Link to="/iro" className="globalMenus-link">
-              Iro
+            <Link to="/zustand" className="globalMenus-link">
+              Zustand
+            </Link>
+          </li>
+          <li className="globalMenus-item">
+            <Link to="/login" className="globalMenus-link">
+              Login
             </Link>
           </li>
         </ul>
@@ -57,8 +62,10 @@ const Layout = () => {
         <Route path="/memo-compare" component={MemoCompare} exact />
         <Route path="/script" component={Script} exact />
         <Route path="/previous" component={Previous} exact />
+        <Route path="/latest" component={Latest} exact />
+        <Route path="/latest" component={Latest} exact />
+        <Route path="/zustand" component={Zustand} exact />
         <Route path="/login" component={Login} exact />
-        <Route path="/iro" component={Iro} exact />
       </div>
     </div>
   );
