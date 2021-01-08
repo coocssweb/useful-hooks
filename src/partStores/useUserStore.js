@@ -16,6 +16,7 @@ const useUserStore = create((set, get) => ({
     }
 
     const response = await http.request({ path: 'https://www.shuxia123.com/services/classifies', delay: 500 });
+
     set({
       list: response.response || list,
       loaded: true,

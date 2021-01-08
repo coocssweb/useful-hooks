@@ -11,3 +11,4 @@ export { default as useMemoCompare } from './useMemoCompare';
 export { default as useScript } from './useScript';
 export { default as usePrevious } from './usePrevious';
 export { default as useLatest } from './useLatest';
+export { default as useSetState } from './useSetState';

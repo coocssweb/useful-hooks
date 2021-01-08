@@ -65,7 +65,7 @@ class Http {
             resolve(response);
           }, delay - totalRequestTime);
         } else {
-          resolve(response.json());
+          resolve(response);
         }
       };
 

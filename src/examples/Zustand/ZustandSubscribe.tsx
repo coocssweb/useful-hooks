@@ -12,8 +12,10 @@ const { useEffect, useRef } = React;
 const Store = () => {
   const userListRef = useRef(useUserStore.getState().list);
 
+  console.log('=-============================================');
+
   useEffect(() => {
-    const unsubscrive = useUserStore.subscribe(
+    const unsubscribe = useUserStore.subscribe(
       (list, prevList) => {
         console.log(list, prevList);
         userListRef.current = list;
@@ -21,7 +23,7 @@ const Store = () => {
       (state) => state.list,
     );
     return () => {
-      unsubscrive();
+      unsubscribe();
     };
   }, []);
 

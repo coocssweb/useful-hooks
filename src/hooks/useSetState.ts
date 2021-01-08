@@ -4,24 +4,25 @@
  * @Description: xxxxxxxxxxxxxxxx
  */
 import { useCallback, useState } from 'react';
-import useLatest from './useLatest';
 
-const useSetState = (value) => {
-  const [stateValue, setStateValue] = useState(value);
-  const latestStateValue = useLatest(stateValue);
+const useSetState = (initialState) => {
+  const [state, set] = useState(initialState);
 
-  const handleSetValue = useCallback(
-    (newValue) => {
-      setStateValue({
-        ...latestStateValue.current,
-        newValue,
-      });
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+  /**
+   * `patch` 允许类型Function、Object
+   * set((prevState) => ...), 依赖于prevState，这样setState不依赖于 `state`值
+   */
+  const setState = useCallback((patch) => {
+    set((prevState) => {
+      const patchValue = patch instanceof Function ? patch(prevState) : patch;
+      return {
+        ...prevState,
+        ...patchValue,
+      };
+    });
+  }, []);
 
-  return [stateValue, handleSetValue];
+  return [state, setState];
 };
 
 export default useSetState;
