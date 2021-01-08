@@ -11,7 +11,7 @@ const { useRef } = React;
 const useLatest = (value: any) => {
   const ref = useRef(value);
   ref.current = value;
-  return ref;
+  return ref.current;
 };
 
 export default useLatest;

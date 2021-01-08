@@ -6,7 +6,6 @@
  *
  */
 import * as React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import PHOTO_LIST from './constants';
 import GalleryViewer from './GalleryViewer';
 import { SubRoute, SubRouteLink } from '../../components';
@@ -17,9 +16,9 @@ const Gallery = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <Router>
+    <>
       <div>
-        {PHOTO_LIST.map((photo) => {
+        {PHOTO_LIST.map(photo => {
           return (
             <SubRouteLink key={photo.id} to={{ pathname: `/gallery/${photo.id}` }}>
               <img src={photo.src} key={photo.id} alt={photo.name} width={100} />
@@ -32,7 +31,7 @@ const Gallery = () => {
           <button
             type="button"
             onClick={() => {
-              setCount((val) => val + 1);
+              setCount(val => val + 1);
             }}
           >
             Add
@@ -43,7 +42,7 @@ const Gallery = () => {
       <SubRoute path="/gallery/:id">
         <GalleryViewer />
       </SubRoute>
-    </Router>
+    </>
   );
 };
 
