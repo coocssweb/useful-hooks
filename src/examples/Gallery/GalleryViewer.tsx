@@ -31,7 +31,7 @@ const GalleryViewer = () => {
           <button
             type="button"
             onClick={() => {
-              setCount((val) => val + 1);
+              setCount(val => val + 1);
             }}
           >
             Add

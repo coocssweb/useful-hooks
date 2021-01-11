@@ -21,7 +21,6 @@ const SubRoute = ({ path, children, ...restParams }) => {
   });
   const transitionKey = isMatch ? `${path}-enter` : path;
 
-  // 3. 渲染
   return (
     <TransitionGroup className={`page-transition slide ${mode}`}>
       <CSSTransition key={transitionKey} timeout={400}>

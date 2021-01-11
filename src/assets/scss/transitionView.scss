@@ -156,19 +156,6 @@ $duration: 400ms;
       &.enter-active {
         transform: translate3d(0, 0, 0);
         transition: transform $duration;
-        &:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-color: rgba(0, 0, 0, 0.1);
-          animation: maskFadeOut $duration ease-out forwards;
-          backface-visibility: hidden;
-          transform-style: preserve-3d;
-          transform: translate3d(0, 0, 0);
-        }
       }
     }
     .exit {
