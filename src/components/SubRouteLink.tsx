@@ -8,19 +8,27 @@
 import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+const { useMemo } = React;
+
 const SubRouteLink = ({ children, to }) => {
   const location = useLocation();
   const background = location.state && location.state.background;
-  const finalLinkTo =
-    typeof (to || '') === 'string'
-      ? {
-          pathname: to,
-          state: { background: background || location },
-        }
-      : {
-          ...to,
-          state: { background: background || location },
-        };
+  const state = location.state || {};
+  const finalLinkTo = useMemo(() => {
+    if (typeof to === 'string') {
+      return {
+        pathname: to,
+        state: { background: background || location },
+      };
+    }
+
+    const oldState = to.state || {};
+    return {
+      ...to,
+
+      state: { ...oldState, ...state, background: background || location },
+    };
+  }, [background, location, state, to]);
 
   return <Link to={finalLinkTo}>{children}</Link>;
 };
