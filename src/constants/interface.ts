@@ -22,3 +22,7 @@ export interface UserInfo {
   avatar: string;
   remark: string;
 }
+
+export interface QueueOptions {
+  onEmpty?: Function;
+}
