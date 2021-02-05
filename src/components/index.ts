@@ -7,3 +7,4 @@
  */
 export { default as SubRoute } from './SubRoute';
 export { default as SubRouteLink } from './SubRouteLink';
+export { default as ErrorBoundary } from './ErrorBoundary';

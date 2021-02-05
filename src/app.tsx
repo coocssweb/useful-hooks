@@ -15,16 +15,31 @@ import Latest from './examples/Latest';
 import Login from './examples/Login';
 import Zustand from './examples/Zustand/Zustand';
 import Gallery from './examples/Gallery/Gallery';
+import { ErrorBoundary } from './components';
 
 if (process.env.MOCK) {
   require('./api/mocks');
 }
 
+// try catch
+// throw new Error
+window.onerror = function (msg, url, line, col, error) {
+  console.error('msg', msg);
+  console.error('url', url);
+  console.error('line', line);
+  console.error('col', col);
+  console.error('error', error);
+};
+
+window.addEventListener('unhandledrejection', (event) => {
+  console.error(event);
+});
+
 const Routes = () => {
   const location = useLocation();
 
   return (
-    <>
+    <ErrorBoundary>
       <TransitionView>
         <Switch location={location}>
           <Route path="/gallery">
@@ -59,7 +74,7 @@ const Routes = () => {
           </Route>
         </Switch>
       </TransitionView>
-    </>
+    </ErrorBoundary>
   );
 };
 

@@ -11,6 +11,20 @@ const Previous = () => {
   const valueRef = useLatest(value);
 
   const handleClick = useCallback(() => {
+    // const func = async () => {
+    //   const a = '';
+    //   console.log(a.bb.cc);
+    // };
+
+    // func();
+
+    // try {
+    const a = '';
+    console.log(a.bb.cc);
+    // } catch (e) {
+    //   throw new Error(e);
+    // }
+
     setValue((c) => c + 1);
   }, []);
 
@@ -23,12 +37,7 @@ const Previous = () => {
 
   return (
     <div>
-      <div>
-        previous:
-        {previousValue}
-        , current:
-        {value}
-      </div>
+      <div>{`previous: ${previousValue} , current: ${value}`}</div>
       <button type="button" onClick={handleClick}>
         Click
       </button>
