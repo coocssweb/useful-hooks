@@ -514,7 +514,7 @@
     <script type="text/javascript">
     var log = () => {
       var image = new Image();
-      image.src = 'http://127.0.0.1:4322/public/graph/fb/g.gif?pixel_id=461475580003503&token=EAAKCbSbaGJ4BO3Pe8mWGymmpi1NKl1XM0mqp2EJRz1hBYPEQZANxGr55TYwzuDJmg4oZABZB7iudpFbQ6W6hbbEHlXeVkCQLhhpnCITzVXpyvr6O3OnM6Uo6nJgBzep3YgntBsZAEpMj4NZAR1uP4Jeuo1kNdITcgmPUl4nJZA8AlpNzCe6fqLGBg3FxYiEqYHlAZDZD&tid=669fcf4c961fad4e1601a911&xid=669fc088e21e6b3ad0d188f7';
+      image.src = 'http://127.0.0.1:4322/public/graph/fb/g.gif?pixel_id=461475580003503&token=EAAKCbSbaGJ4BO3Pe8mWGymmpi1NKl1XM0mqp2EJRz1hBYPEQZANxGr55TYwzuDJmg4oZABZB7iudpFbQ6W6hbbEHlXeVkCQLhhpnCITzVXpyvr6O3OnM6Uo6nJgBzep3YgntBsZAEpMj4NZAR1uP4Jeuo1kNdITcgmPUl4nJZA8AlpNzCe6fqLGBg3FxYiEqYHlAZDZD&tid=669fcf4c961fad4e1601a911&xid=669fc088e21e6b3ad0d188f7&test_event_code=TEST44511';
       document.body.appendChild(image);
     };
 
@@ -549,7 +549,7 @@
     var _checkInstall = async() => {
         try {
             const apps = await navigator.getInstalledRelatedApps();
-            const isInstalled = (apps ||[]).find((item) => item.url=== 'https://www.bestwish.cc/669fcf4c961fad4e1601a911/manifest.json');
+            const isInstalled = (apps ||[]).find((item) => item.url=== 'https://www.wishday.cc/669fcf4c961fad4e1601a911/manifest.json');
 
             if (isInstalled) {
                 installed();
@@ -562,6 +562,7 @@
     }
 
     $btnInstall.addEventListener('click', (e) =>{
+        log();  
         if (deferredPrompt?.prompt) {
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
@@ -588,7 +589,7 @@
     })();
 
     $btnOpen.addEventListener('click', () => {
-        window.open("https://www.bestwish.cc/669fcf4c961fad4e1601a911/index.html", '_blank');
+        window.open("https://www.wishday.cc/669fcf4c961fad4e1601a911/index.html", '_blank');
     });
 
     </script>
