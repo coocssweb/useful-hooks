@@ -1,42 +1,44 @@
-{
-  "name": "37JL",
-  "short_name": "37JL",
-  "icons": [
-    {
-      "src": "./icon128_128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "./icon144_144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "./icon152_152.png",
-      "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "./icon192_192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "./icon512_512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "https://www.wishday.cc/669fcf4c961fad4e1601a911/index.html",
-  "display": "standalone",
-  "background_color": "#f9f9fa",
-  "theme_color": "#f9f9fa",
-  "orientation": "natural",
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "https://www.wishday.cc/669fcf4c961fad4e1601a911/manifest.json"
-    }
-  ]
-}
+
+  {
+    "name": "37JL",
+    "short_name": "37JL",
+    "icons": [
+      {
+        "src": "./icon128_128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "./icon144_144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "./icon152_152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      },
+      {
+        "src": "./icon192_192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./icon512_512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "https://www.bestwish.cc/669fcf4c961fad4e1601a911/index.html",
+    "display": "standalone",
+    "background_color": "#f9f9fa",
+    "theme_color": "#f9f9fa",
+    "orientation": "natural",
+    "related_applications": [
+      {
+        "platform": "webapp",
+        "url": "https://www.bestwish.cc/669fcf4c961fad4e1601a911/manifest.json"
+      }
+    ]
+  }  
+  
